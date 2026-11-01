@@ -140,7 +140,8 @@
         <div class="step" data-step="0">
           <h4 class="card-hed">Almost everyone starts in a hold room.</h4>
           <p class="card-body">Usually in <b>Baltimore</b>, which held 7,253 people arrested in Maryland, or
-            <b>Salisbury</b>, where 1,836 were booked first.</p>
+            <b>Salisbury</b>, where 1,836 were booked first.
+          </p>
           <div class="card-legend"><span><i style="background:var(--ink)"></i>Maryland facility</span></div>
         </div>
         <div class="step" data-step="1">
@@ -290,52 +291,30 @@
           record</a></p>
     </div>
     <div class="col">
-      <section class="limits-text">
-        <h2>What the records can't tell us</h2>
-        <p>The records show where and when someone was held, not why ICE moved them, and hold room times show how long
-          people stayed, not how crowded the rooms were. Being held in a 5th Circuit state does not mean a case was
-          heard there. A departure is recorded as a removal or a voluntary departure; the records do not show how that
-          decision was made. Destinations are as ICE recorded them. ICE keeps updating its records, so paths for people
-          still detained may be incomplete.</p>
-      </section>
       <section class="methods">
         <h2>How we did this analysis</h2>
-        <h3>The records</h3>
-        <p>This analysis uses U.S. Immigration and Customs Enforcement records that the Deportation Data Project, a
-          research group at the University of California, Berkeley, and UCLA, obtained through <a
-            href="https://deportationdata.org/foia.html">Freedom of Information Act lawsuits</a> and published on its <a
-            href="https://deportationdata.org/data/processed/ice.html">data page</a>. We used the project's release of
-          Aug. 24, 2026, which covers Oct. 1, 2022, through Aug. 6, 2026, and four of its files: arrests, detainers,
-          arrests linked to detention stays, and detention stints. In every file, we removed rows the project flags as
-          likely duplicates, using its <code>duplicate_drop_row</code> column.</p>
-        <h3>Detention and departures</h3>
-        <p>The project's file linking arrests to detention has one row per arrest, with the person's ICE detention stay
-          attached. Hold room times come from <code>book_in_date_time_first</code> and
-          <code>book_out_date_time_first</code> for people whose first stop (<code>detention_facility_first</code>) was
-          the Baltimore hold room: the hours between the two, summarized as a monthly median by the month of book-in, in
-          Eastern time. People detained since Jan. 20, 2025, are those with <code>has_detention_stay</code>. Because
-          each row is an arrest, a person detained after two arrests appears twice: the 8,319 detention stays involve
-          8,279 people, and counts of people use <code>unique_identifier</code> to count each person once; where they
-          spent the longest part of their detention comes from <code>detention_facility_state_longest</code>. A recorded
-          departure from the country is a non-missing <code>departed_date</code>, which includes removals and voluntary
-          departures. Release and continued detention come from <code>stay_release_reason_simple</code>.
-        </p>
-        <p>A person was counted as sent to a country other than their own when <code>departure_country</code> differs
-          from <code>citizenship_country</code>; one record listing "KOREA" and "SOUTH KOREA" was treated as the same
-          country. Departure counts cover people arrested since Jan. 20, 2025. These fields come from this linked file,
-          which draws on ICE's detention and removal records; across all the records, the arrests file has slightly
-          fewer departures (7,536 compared with 7,611). Globe circles are placed at the
-          center of each country, not the arrival point.</p>
-        <h3>Facilities and paths</h3>
-        <p>In the detention stints file, each row is one stop at one facility within a person's detention stay. We kept
-          the stops for the stays above, matched on <code>stay_ID</code>. The number of facilities a person passed
-          through counts distinct <code>detention_facility_code</code> values; time in Louisiana and at Guantánamo Bay
-          comes from the <code>state</code> column, where ICE codes Guantánamo as "CU." To trace paths, we put each
-          person's stops in order of <code>book_in_date_time</code> and merged back-to-back stops at the same facility.
-          The map shows the single most common path, followed by 360 people, and the most common path with five stops,
-          followed by 25. Facilities are placed at the center of the city where they are located. Times on that route
-          are medians for the group, measured from <code>book_in_date_time</code> to <code>book_out_date_time</code>; no
-          individual's record is shown. Paths for people still detained when the records end may be incomplete.</p>
+        <p>Capital News Service analyzed U.S. Immigration and Customs Enforcement detention records that the <a
+            href="https://deportationdata.org/data/processed/ice.html">Deportation Data Project</a>, a research group at
+          the University of California, Berkeley, and UCLA, obtained through <a
+            href="https://deportationdata.org/foia.html">Freedom of Information Act lawsuits</a>. The records cover
+          Oct. 1, 2022, through Aug. 6, 2026. We removed rows the project flags as likely duplicates.</p>
+        <p>We followed people arrested in Maryland and detained by ICE from Jan. 20, 2025, when President Donald Trump's
+          second term began, through Aug. 6, 2026: 8,279 people, counted once each even if they were detained more than
+          once. We traced each person's stops in the order they were booked in, and counted how many different
+          facilities they passed through.</p>
+        <p>Hold room times are the hours between booking in and out of ICE's Baltimore hold room for people whose first
+          stop was there, reported as the monthly median: half stayed longer, half shorter. A departure means ICE
+          recorded the person leaving the country, by deportation or voluntary departure. To show how cases ended, we
+          used arrests made through the end of 2025, because cases can take months to resolve. Times on the mapped route
+          are medians for the group, not one person's record.</p>
+        <h3>What the records can't tell us</h3>
+        <p>The records show where and when people were held, not why ICE moved them, and hold room times show how long
+          people stayed, not how crowded the rooms were. Where someone was held does not show where their case was
+          heard.
+          The records don't show how a departure decision was made, and destinations are as ICE recorded them. ICE keeps
+          updating its records, so paths for people still detained may be incomplete.</p>
+        <p>The full methodology, analysis notebook and data are on <a
+            href="https://github.com/mehedi-marof/ice-maryland-analysis-aug26">GitHub</a>.</p>
       </section>
     </div>
   </main>
