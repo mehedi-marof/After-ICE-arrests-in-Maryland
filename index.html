@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>After an ICE arrest in Maryland, most people were held out of state. Many were moved again and again | Capital News Service</title>
+  <meta name="description"
+    content="A Capital News Service analysis of ICE records: where people arrested in Maryland were held, how often they were moved and where they were sent.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Poppins:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/page.css">
+  <link rel="stylesheet" href="css/charts.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/scrollama@3.2.0/build/scrollama.min.js"></script>
+  <script type="module" src="js/main.js"></script>
+</head>
+
+<body>
+  <!-- The page:
+     css/page.css     overall page design (type, columns, title screen, scrollytelling)
+     css/charts.css   CNS chart frames, legends, buttons, tooltips
+     js/main.js       loads data/*.csv and draws each chart from js/charts/*.js -->
+
+  <header class="masthead">
+    <a href="https://cnsmaryland.org/">
+      <img src="assets/cns-logo.png" alt="Capital News Service">
+    </a>
+  </header>
+  <div class="progress" aria-hidden="true"></div>
+
+  <section class="title bleed dark" aria-label="Story title">
+    <svg id="heroroute" aria-hidden="true"></svg>
+    <div class="panel">
+      <p class="kicker">Immigration enforcement</p>
+      <h1>After an ICE arrest in Maryland, most people were held out of state. Many were moved again and again</h1>
+      <p class="dek">Three in four people ICE detained after arrests in Maryland were held at some point in Louisiana, Texas or Mississippi, outside the federal appeals circuit that covers Maryland, agency records show.</p>
+      <p class="byline">By <a href="https://cnsmaryland.org/author/mhm/"><b>Mehedi Marof</b></a> · Capital News Service</p>
+      <p class="series">Also in this series: <a href="https://mehedimarof.github.io/ices-arrests-in-maryland-nearly-doubled-this-year-the-growth-is-people-with-no-criminal-record/">Who ICE arrested</a></p>
+    </div>
+    <a class="cue" href="#story">Scroll to read<span aria-hidden="true">↓</span></a>
+  </section>
+
+  <main id="story">
+<div class="col" style="padding-top:56px"></div>
+<div class="col">
+<p>U.S. Immigration and Customs Enforcement detained about 8,300 people arrested in Maryland from Jan. 20, 2025, through early August 2026. Few of them stayed in the state for long.</p>
+<p>Maryland has no long-term immigration detention center. Most people passed through an ICE hold room in Baltimore or Salisbury and were then moved, often more than once.</p>
+<p>About three in four, more than 6,200 people, were held at some point in Louisiana, Texas or Mississippi, the states covered by the U.S. Court of Appeals for the 5th Circuit. Half of them got there within about four days of first being booked.</p>
+<p>Maryland is in the 4th Circuit, where federal judges have been more receptive to challenges from people who say they are being held illegally, said Maureen Sweeney, who directs the Immigration Clinic at the University of Maryland Francis King Carey School of Law.</p>
+<p>"There's a very deliberate strategy on the part of the government to move people around to hide them in the system, also to move them to legal jurisdictions where the law is not as protective," she said.</p>
+<p>Capital News Service traced those journeys through ICE detention records released by the <a href="https://deportationdata.org/data/processed/ice.html">Deportation Data Project</a>, a research group at the University of California, Berkeley, and UCLA.</p>
+<h2>The first stop</h2>
+<p>For most people, the first stop is a hold room at ICE's Baltimore field office, a set of cells meant for short stays. ICE's <a href="https://www.ice.gov/doclib/detention-standards/2019/2_5.pdf">detention standards</a> generally limit hold room stays to 12 hours, but the agency granted the Baltimore office a waiver, Landan said.</p>
+<p>In 2023 and 2024, half of the people booked into the Baltimore hold room left within about six hours. After Trump took office, stays climbed through 2025. By January 2026, the typical stay was about 106 hours, more than four days.</p>
+</div>
+<figure class="chart-frame wide" id="f-hold">
+<h3 class="chart-hed">Time held in ICE's Baltimore hold room</h3>
+<p class="chart-chatter">Median hours spent in the hold room, by the month people were booked in.</p>
+<div class="viz" id="c-hold"></div>
+<p class="chart-note">Only people whose first ICE detention stop was the Baltimore hold room, computed from ICE book-in and book-out times.</p>
+<div class="chart-foot"><span class="chart-source">Source: ICE detention data obtained by the Deportation Data
+          Project via FOIA; CNS analysis. <b>Chart: Mehedi Marof / Capital News Service</b> · <a href="data/holdroom.csv">Get the data</a></span><span class="wordmark">Capital News Service</span></div>
+</figure>
+<div class="col">
+<p>Hold rooms "are supposed to be very temporary places," said Yulie Landan, a staff attorney at the National Immigration Project, one of the groups suing over conditions there. In Baltimore, she said, people were held "upwards of a weekend," with agents "really cramming them into these tiny cells that were not meant to ever hold someone long term."</p>
+<p>Some had no room to lie down and tried to sleep sitting up, she said, and people with "very serious health conditions were just not getting any access to their medicine."</p>
+<p>On March 6, U.S. District Judge Julie R. Rubin ruled that conditions in the hold room violated detainees' constitutional rights and limited how many people it could hold, in a <a href="https://nipnlg.org/index.php/news/press-releases/federal-court-orders-ice-end-inhumane-conditions-immigrants-baltimores">class action</a> brought by the National Immigration Project and the Amica Center for Immigrant Rights.</p>
+<p>The Department of Homeland Security disputed the allegations. "These claims that there are subprime conditions or overcrowding are false," a spokesperson <a href="https://cnsmaryland.org/2026/03/10/attorney-general-files-a-lawsuit-for-records-to-investigate-conditions-at-baltimore-ice-detention-facility/">told Capital News Service</a> in March, adding that detainees are provided food, water, blankets and hygiene products. “Each holding room is equipped with a phone where detainees can make phone calls to family members and lawyers.”</p>
+<p>Attorney General Anthony Brown also sued ICE and DHS in March for records about the rooms, which he called "dangerous, inhumane, and unlawful," and later <a href="https://oag.maryland.gov/News/Pages/Attorney-General-Brown-Files-Motion-for-Summary-Judgment-in-Lawsuit-Over-Records-for-Reported-Dangerous,-Inhumane,-and-Unla.aspx">asked a judge to rule for the state</a> without a trial.</p>
+<p>Stays shortened in the months after the ruling. The typical stay fell to about 59 hours for people booked in March and about 28 hours in June, and far fewer people were booked into the room each month than during the winter. Figures for July are lower still but may be incomplete, because the records end in early August.</p>
+<p>"I do think the situation on the ground did change," Landan said. "It didn't ... change perfectly."</p>
+<p>In September, Rubin <a href="https://nipnlg.org/news/press-releases/federal-court-orders-ice-comply-injunction-protecting-immigrants-detained">found that ICE had failed to comply</a> with her order, citing the government's own data showing overcrowding on more than 60% of days, and called the government's efforts a "spectacular failure."</p>
+<h2>Moved again and again</h2>
+<p>After the hold room, most people were moved several times. About two in three passed through three or more ICE facilities, and about one in five passed through five or more.</p>
+</div>
+<figure class="chart-frame wide" id="f-faccount">
+<h3 class="chart-hed">About two in three were held in three or more facilities</h3>
+<p class="chart-chatter">People arrested in Maryland and detained by ICE since Jan. 20, 2025, by the number of different ICE facilities they passed through</p>
+<div class="viz" id="c-faccount"></div>
+<p class="chart-note">Counts each person once, across all of that person's detention stays. Facilities counted by ICE's facility code.</p>
+<div class="chart-foot"><span class="chart-source">Source: ICE detention data obtained by the Deportation Data Project via FOIA; CNS analysis. <b>Chart: Mehedi Marof / Capital News Service</b> · <a href="data/facility_counts.csv">Get the data</a></span><span class="wordmark">Capital News Service</span></div>
+</figure>
+<section aria-label="Map of detention facilities, step by step" class="scrolly bleed immersive" id="sc-detention">
+<div class="sticky">
+<h3 class="chart-hed" style="padding:0 16px">Where people arrested in Maryland were held</h3>
+<div class="viz" id="m-detention"></div>
+<div class="chart-foot" style="margin:6px 16px 0"><span class="chart-source">ICE facilities that held at least
+            one person arrested in Maryland since Jan. 20, 2025, sized by people held; the paths are the most common
+            overall and the most common five-stop route, with typical times, not one person's record. Source: ICE
+            detention data via the Deportation Data Project; CNS analysis. <b>Map: Mehedi Marof / CNS</b></span><span class="wordmark">Capital News Service</span></div>
+</div>
+<div class="steps">
+<div class="step" data-step="0">
+<h4 class="card-hed">Almost everyone starts in a hold room.</h4>
+<p class="card-body">Usually in <b>Baltimore</b>, which held 7,253 people arrested in Maryland, or <b>Salisbury</b>, where 1,836 were booked first.</p>
+<div class="card-legend"><span><i style="background:var(--ink)"></i>Maryland facility</span></div>
+</div>
+<div class="step" data-step="1">
+<h4 class="card-hed">Then many are moved south.</h4>
+<p class="card-body">More than half, 4,607 people, were held at some point in Louisiana, including 1,905 who passed through the Alexandria Staging Facility, the airport hub ICE uses for deportation flights. About nine in 10 spent the longest part of their detention outside Maryland.</p>
+<div class="card-legend"><span><i style="background:var(--red)"></i>Facility outside Maryland</span></div>
+</div>
+<div class="step" data-step="2">
+<h4 class="card-hed">The most common recorded route had just two stops.</h4>
+<p class="card-body">360 people went from the Baltimore hold room straight to Richwood Correctional Center in Monroe, La., the single most common path. The typical person passed through three facilities.</p>
+<div class="card-legend"><span><i style="background:var(--blue)"></i>Path</span></div>
+</div>
+<div class="step" data-step="3">
+<h4 class="card-hed">Some journeys were much longer.</h4>
+<p class="card-body">1,613 people, about one in five, were held in five or more different facilities. Here is the most common of those longer routes, followed by 25 people. It starts, like most, in the <b>Baltimore hold room</b>, typically for about a day.</p>
+<div class="card-legend"><span><i style="background:var(--blue)"></i>The route, stop by stop</span></div>
+</div>
+<div class="step" data-step="4">
+<h4 class="card-hed">Stops 2 and 3: Virginia.</h4>
+<p class="card-body">First the Caroline Detention Facility in Bowling Green, typically for about a day and a half, then ICE's Richmond hold room for a few hours before a long transfer.</p>
+</div>
+<div class="step" data-step="5">
+<h4 class="card-hed">Stop 4: Winn Correctional Center, Winnfield, La.</h4>
+<p class="card-body">More than 1,000 miles from Baltimore. The longest stop on this path, typically about three and a half days.</p>
+</div>
+<div class="step" data-step="6">
+<h4 class="card-hed">Stop 5: the Alexandria Staging Facility.</h4>
+<p class="card-body">The deportation-flight hub. The whole trip typically took about 9.4 days. ICE recorded all 25 as deported. 16 of them had no prior conviction or pending charge.</p>
+</div>
+</div>
+</section>
+<div class="col">
+<p>Each move takes people "further away from their community members and their loved ones and their attorneys," Landan said. Families and lawyers usually are not told when someone is transferred, she said, and ICE's online detainee locator can lag, so the search starts over with each move.</p>
+<p>Sweeney said some moves appear intended to stay ahead of lawyers. "Sometimes I think it is deliberate," she said, "so the lawyers can't catch up with where the person is to file a habeas petition."</p>
+<p>Federal judges in Maryland, she said, "are extremely receptive to habeas petitions and to arguments that people have been illegally detained." In the 5th Circuit, she said, people are "much more likely" to be held indefinitely and to lose their immigration cases.</p>
+<p>The two appeals courts have split on a central question for detainees. In September, the 4th Circuit <a href="https://www.aclu.org/press-releases/federal-appeals-court-rules-against-trump-mandatory-detention-policy">found unlawful</a> the administration's policy of holding people who entered the country without inspection with no chance at a bond hearing. The 5th Circuit upheld that policy in February, and in October its full court <a href="https://nipnlg.org/sites/default/files/2026-10/Sosnava-en-banc-decision.pdf">ruled</a> that even months of detention without a hearing does not violate due process "so long as removal remains a viable prospect."</p>
+<p>Finding people has also become harder. In September, DHS removed people with final orders of removal from its online detainee locator, Sweeney said. Landan said those people "are no longer even showing up on that database," and that her colleagues had filed a lawsuit over the change.</p>
+<p>Many of those people had been checking in with ICE "for 10 years, 20 years," Sweeney said, and some have orders barring their return to countries where they face persecution. "They're essentially disappearing those people into the system," she said.</p>
+<h2>Where they came from</h2>
+<p>About 78% of ICE's arrests in Maryland since Trump took office were of citizens of Guatemala, El Salvador, Honduras or Mexico, though the agency recorded citizens of 104 countries in all.</p>
+<p>For each of those four countries, about eight in 10 arrests made in 2025 had ended with the person leaving the U.S. by early August.</p>
+</div>
+<figure class="chart-frame wide" id="f-cit-arrests">
+<h3 class="chart-hed">Four countries accounted for nearly four in five arrests</h3>
+<p class="chart-chatter">ICE arrests in Maryland since Jan. 20, 2025, by citizenship.</p>
+<div class="viz" id="c-cit-arrests"></div>
+<p class="chart-note">Counts are arrests, not people, by citizenship as ICE recorded it. All other countries are grouped together.</p>
+<div class="chart-foot"><span class="chart-source">Source: ICE data obtained by the Deportation Data Project via FOIA; CNS analysis. <b>Chart: Mehedi Marof / Capital News Service</b> · <a href="data/citizenship_arrests.csv">Get the data</a></span><span class="wordmark">Capital News Service</span></div>
+</figure>
+<div class="col">
+<h2>Where they ended up</h2>
+<p>Of the roughly 4,750 arrests ICE made in Maryland from Jan. 20 through the end of 2025, about 79% had ended in deportation or voluntary departure by early August.</p>
+<p>About 12% ended in release, and about 4% of the people arrested were still in detention. CNS looked at arrests made through December because cases can take months to resolve and the records end in early August.</p>
+<p>Landan said some departures were not as voluntary as the name suggests. "It's not really voluntary. It's extremely coercive," she said. She said detained people are told that unless they agree to be deported, or to go to Mexico, they will keep being transferred and will never get out.</p>
+<p>"Some people do sign that," she said, "because they were coerced into it."</p>
+</div>
+<section aria-label="Globe of deportation destinations, step by step" class="scrolly bleed immersive globe" id="sc-globe">
+<div class="sticky">
+<h3 class="chart-hed" style="padding:0 16px">Where people arrested in Maryland were sent</h3>
+<div class="viz" id="m-globe"></div>
+<div class="chart-foot" style="margin:6px 16px 0"><span class="chart-source">Recorded departures of people
+            arrested in Maryland since Jan. 20, 2025. Circles sit at the center of each country, not the arrival point.
+            Source: ICE data via the
+            Deportation Data Project; CNS analysis. <b>Map: Mehedi Marof / CNS</b> · <a href="data/destinations.csv">Destinations</a> · <a href="data/routes.csv">Routes</a></span><span class="wordmark">Capital News Service</span></div>
+</div>
+<div class="steps">
+<div class="step" data-step="0">
+<h4 class="card-hed">Most were sent to their own countries.</h4>
+<p class="card-body">ICE recorded 6,084 departures. Guatemala, El Salvador, Mexico and Honduras received the most. Circles are sized by recorded departures.</p>
+<div class="card-legend"><span><i style="background:#1979b9"></i>Destination country</span></div>
+</div>
+<div class="step" data-step="1">
+<h4 class="card-hed">271 went somewhere else.</h4>
+<p class="card-body">They were sent to a country other than the one ICE lists as their citizenship. 191 went to Mexico, most of them citizens of El Salvador, Guatemala or Honduras; 154 of the 271 had no prior conviction or pending charge.</p>
+<div class="card-legend globe-legend"></div>
+</div>
+<div class="step" data-step="2">
+<h4 class="card-hed">A few crossed an ocean.</h4>
+<p class="card-body">A handful of West Africans were sent to other West African countries, such as five Nigerians sent to Ghana. Destinations are as ICE recorded them, which can be where a flight landed rather than where someone settled.</p>
+<div class="card-legend globe-legend"></div>
+</div>
+</div>
+</section>
+<div class="col">
+<p>ICE recorded 271 people who were sent to a country other than the one listed as their citizenship. Most of them, 191, went to Mexico, and most of those were citizens of El Salvador, Guatemala or Honduras.</p>
+<p>A federal lawsuit known as D.V.D. v. DHS is challenging third-country removals.</p>
+<p>Sweeney said one client of her center had a judge's order finding he was likely to be tortured in his home country. He was sent to a third country instead, she said, which sent him straight back home without releasing him. "It was just a little shell game," she said. He is now in hiding, she said.</p>
+<p>People sent to a country they have never lived in "don't have a community there," Landan said. "They're being dropped in a country they've never been to where they probably don't speak the language."</p>
+<h2>A system built to last</h2>
+<p>Landan said the arrests, the hold rooms, the transfers and the departures should be understood together. "Each part of this process is horrific in its own right, but it is all one story," she said, "of the government's quest to have the largest deportation machine they can."</p>
+<p>Several of the Louisiana facilities where people arrested in Maryland were held are in small towns, such as Winnfield, home to the Winn Correctional Center. Many detention centers sit in rural places "where there aren't a lot of other jobs," Sweeney said. "These are steady jobs. They're good-paying jobs."</p>
+<p>"Once we've built up a detention infrastructure," she said, "we then have a detention industry that has its own self-perpetuating momentum."</p>
+<p>She called the money Congress has poured into ICE "a gross misspending of our tax dollars," and said the system it is building is "going to outlast" even "the policy preferences of this administration."</p>
+<p>"Everybody is living in fear of what might happen to their loved ones," Landan said.</p>
+<p class="readnext"><a href="https://mehedimarof.github.io/ices-arrests-in-maryland-nearly-doubled-this-year-the-growth-is-people-with-no-criminal-record/"><span>Read next</span>ICE's arrests in Maryland nearly doubled this year. The growth is people with no criminal record</a></p>
+</div>
+<div class="col">
+      <section class="limits-text">
+        <h2>What the records can't tell us</h2>
+        <p>The records show where and when someone was held, not why ICE moved them, and hold room times show how long people stayed, not how crowded the rooms were. Being held in a 5th Circuit state does not mean a case was heard there. A departure is recorded as a removal or a voluntary departure; the records do not show how that decision was made. Destinations are as ICE recorded them. ICE keeps updating its records, so paths for people still detained may be incomplete.</p>
+      </section>
+      <section class="methods">
+        <h2>How we did this analysis</h2>
+        <h3>The records</h3>
+<p>This analysis uses U.S. Immigration and Customs Enforcement records that the Deportation Data Project, a
+          research group at the University of California, Berkeley, and UCLA, obtained through <a href="https://deportationdata.org/foia.html">Freedom of Information Act lawsuits</a> and published on its <a href="https://deportationdata.org/data/processed/ice.html">data page</a>. We used the project's release of
+          Aug. 24, 2026, which covers Oct. 1, 2022, through Aug. 6, 2026, and four of its files: arrests, detainers,
+          arrests linked to detention stays, and detention stints. In every file, we removed rows the project flags as
+          likely duplicates, using its <code>duplicate_drop_row</code> column.</p>
+        <h3>Detention and departures</h3>
+<p>The project's file linking arrests to detention has one row per arrest, with the person's ICE detention stay
+          attached. Hold room times come from <code>book_in_date_time_first</code> and
+          <code>book_out_date_time_first</code> for people whose first stop (<code>detention_facility_first</code>) was
+          the Baltimore hold room: the hours between the two, summarized as a monthly median by the month of book-in, in
+          Eastern time. People detained since Jan. 20, 2025, are those with <code>has_detention_stay</code>. Because each row is an arrest, a person detained after two arrests appears twice: the 8,319 detention stays involve 8,279 people, and counts of people use <code>unique_identifier</code> to count each person once; where they
+          spent the longest part of their detention comes from <code>detention_facility_state_longest</code>. A recorded
+          departure from the country is a non-missing <code>departed_date</code>, which includes removals and voluntary
+          departures. Release and continued detention come from <code>stay_release_reason_simple</code>.
+        </p>
+<p>A person was counted as sent to a country other than their own when <code>departure_country</code> differs
+          from <code>citizenship_country</code>; one record listing "KOREA" and "SOUTH KOREA" was treated as the same
+          country. Departure counts cover people arrested since Jan. 20, 2025. These fields come from this linked file,
+          which draws on ICE's detention and removal records; across all the records, the arrests file has slightly
+          fewer departures (7,536 compared with 7,611). Globe circles are placed at the
+          center of each country, not the arrival point.</p>
+        <h3>Facilities and paths</h3>
+<p>In the detention stints file, each row is one stop at one facility within a person's detention stay. We kept
+          the stops for the stays above, matched on <code>stay_ID</code>. The number of facilities a person passed
+          through counts distinct <code>detention_facility_code</code> values; time in Louisiana and at Guantánamo Bay
+          comes from the <code>state</code> column, where ICE codes Guantánamo as "CU." To trace paths, we put each
+          person's stops in order of <code>book_in_date_time</code> and merged back-to-back stops at the same facility.
+          The map shows the single most common path, followed by 360 people, and the most common path with five stops,
+          followed by 25. Facilities are placed at the center of the city where they are located. Times on that route
+          are medians for the group, measured from <code>book_in_date_time</code> to <code>book_out_date_time</code>; no
+          individual's record is shown. Paths for people still detained when the records end may be incomplete.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-foot">
+    <img src="assets/cns-logo.png" alt="Capital News Service">
+    <span>Capital News Service · Philip Merrill College of Journalism, University of Maryland</span>
+  </footer>
+</body>
+
+</html>
