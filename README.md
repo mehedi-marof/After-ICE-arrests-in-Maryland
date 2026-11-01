@@ -1,11 +1,13 @@
-# After an ICE arrest in Maryland
+# After an ICE arrest in Maryland, most people were held out of state. Many were moved again and again
 
-Interactive data story by Mehedi Marof, Capital News Service. Live at https://mehedimarof.github.io/after-an-ice-arrest-in-maryland-most-people-were-held-out-of-state-many-were-moved-again-and-again/
+Interactive data story by Mehedi Marof, Capital News Service.
+
+Live: https://mehedi-marof.github.io/After-ICE-arrests-in-Maryland/
 
 Part of a three-story series on ICE in Maryland:
-- Who ICE arrested in Maryland: https://mehedimarof.github.io/ices-arrests-in-maryland-nearly-doubled-this-year-the-growth-is-people-with-no-criminal-record/
-- After an ICE arrest in Maryland: https://mehedimarof.github.io/after-an-ice-arrest-in-maryland-most-people-were-held-out-of-state-many-were-moved-again-and-again/
-- Maryland's 287(g) ban and the routes it left open: https://mehedimarof.github.io/maryland-banned-287g-local-law-enforcers-still-can-help-if-they-want-to/ (coming soon)
+- ICE's arrests in Maryland nearly doubled this year. The growth is people with no criminal record: https://mehedi-marof.github.io/ICE-arrests-in-maryland-nearly-doubled/
+- After an ICE arrest in Maryland, most people were held out of state. Many were moved again and again: https://mehedi-marof.github.io/After-ICE-arrests-in-Maryland/
+- Maryland banned 287(g). Jails still can help if they want to: https://mehedi-marof.github.io/maryland-police-can-still-help-ICE/ (coming soon)
 
 Data: ICE arrest, detainer and detention records obtained by the [Deportation Data Project](https://deportationdata.org/data/processed/ice.html) through Freedom of Information Act lawsuits, covering Oct. 1, 2022, through Aug. 6, 2026. The tables below were produced by the CNS analysis notebook (separate repository).
 
@@ -33,13 +35,3 @@ Data tables in this repo:
 | `data/holdroom.csv` |
 | `data/route.csv` |
 | `data/routes.csv` |
-
-## Run locally
-
-The page loads CSV files, so it must be served over HTTP: `python3 -m http.server` in this folder, then open http://localhost:8000.
-
-## Publish
-
-Settings → Pages → Deploy from a branch → `main` / root.
-
-Libraries: D3 7.8.5 (cdnjs) and Scrollama 3.2.0 (jsDelivr). Fonts: Source Serif 4 and Poppins (Google Fonts).
