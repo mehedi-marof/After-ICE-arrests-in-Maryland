@@ -82,7 +82,7 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(25px,3.3vw,32px);lin
 .limits{background:var(--wash);padding:20px 24px 8px;margin:32px 0}
 .limits h3{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin:0 0 10px}
 .limits li{font-size:16px;line-height:1.5;margin-bottom:8px}
-.methods{margin-top:40px;font-size:15.5px;line-height:1.58;color:var(--ink-2)}
+.methods{margin-top:40px;border-top:1px solid var(--ink);padding-top:8px;font-size:15.5px;line-height:1.58;color:var(--ink-2)}
 .methods h2{font-size:20px;margin:16px 0 10px;color:var(--ink)}
 .methods li{margin-bottom:8px}
 .site-foot{margin-top:64px;background:#000;color:#cfcfcf;font-family:var(--sans);font-size:12px;padding:22px max(16px,env(safe-area-inset-right,0px)) calc(22px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));
