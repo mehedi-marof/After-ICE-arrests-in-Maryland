@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Where people arrested in Maryland were sent | Capital News Service</title>
+<base target="_blank">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Poppins:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../css/page.css">
+<link rel="stylesheet" href="../css/charts.css">
+<link rel="stylesheet" href="embed.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script type="module" src="embed.js"></script>
+</head>
+<body data-chart="sent">
+<figure class="chart-frame" id="f-sent">
+  <h3 class="chart-hed">Where people arrested in Maryland were sent</h3>
+  <div class="controls" role="group" aria-label="Map views"><button type="button">Home countries</button><button type="button">Somewhere else</button><button type="button">Across an ocean</button></div>
+  <p class="step-text" id="step-text" aria-live="polite"></p>
+  <div class="card-legend" id="step-legend"></div>
+  <div class="viz" id="viz"></div>
+  <div class="chart-foot"><span class="chart-source">Recorded departures of people
+            arrested in Maryland since Jan. 20, 2025. Circles sit at the center of each country, not the arrival point.
+            Source: ICE data via the
+            Deportation Data Project; CNS analysis. <b>Map: Mehedi Marof / CNS</b> · <a href="data/destinations.csv">Destinations</a> · <a href="data/routes.csv">Routes</a></span><span class="wordmark">Capital News Service</span></div>
+</figure>
+<script>window.STEPS=[{"text": "<b>Most were sent to their own countries.</b> ICE recorded 6,084 departures. Guatemala, El Salvador, Mexico and Honduras received the most. Circles are sized by recorded departures.", "legend": "<span><i style=\"background:#1979b9\"></i>Destination country</span>", "globe": false}, {"text": "<b>271 went somewhere else.</b> They were sent to a country other than the one ICE lists as their citizenship. 191 went to Mexico, most of them citizens of El Salvador, Guatemala or Honduras; 154 of the 271 had no prior conviction or pending charge.", "legend": "", "globe": true}, {"text": "<b>A few crossed an ocean.</b> A handful of West Africans were sent to other West African countries, such as five Nigerians sent to Ghana. Destinations are as ICE recorded them, which can be where a flight landed rather than where someone settled.", "legend": "", "globe": true}];</script>
+</body>
+</html>
