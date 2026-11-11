@@ -54,7 +54,8 @@ a {
 }
 
 p {
-  margin: 0 0 1.15em
+  margin: 0 0 1.15em;
+  text-wrap: pretty
 }
 
 .col {
