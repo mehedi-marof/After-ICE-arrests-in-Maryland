@@ -1,30 +1,38 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Where people arrested in Maryland were held | Capital News Service</title>
-<base target="_blank">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Poppins:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="../css/page.css">
-<link rel="stylesheet" href="../css/charts.css">
-<link rel="stylesheet" href="embed.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
-<script type="module" src="embed.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Where people arrested in Maryland were held | Capital News Service</title>
+  <base target="_blank">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Poppins:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="../css/page.css">
+  <link rel="stylesheet" href="../css/charts.css">
+  <link rel="stylesheet" href="embed.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+  <script type="module" src="embed.js"></script>
 </head>
+
 <body data-chart="held">
-<figure class="chart-frame" id="f-held">
-  <h3 class="chart-hed">Where people arrested in Maryland were held</h3>
-  <div class="controls" role="group" aria-label="Map views"><button type="button">Hold rooms</button><button type="button">Moved south</button><button type="button">Most common route</button><button type="button">Longer journeys</button><button type="button">Stops 2–3</button><button type="button">Stop 4</button><button type="button">Stop 5</button></div>
-  <p class="step-text" id="step-text" aria-live="polite"></p>
-  <div class="card-legend" id="step-legend"></div>
-  <div class="viz" id="viz"></div>
-  <div class="chart-foot"><span class="chart-source">ICE facilities that held at least
-            one person arrested in Maryland since Jan. 20, 2025, sized by people held; the paths are the most common
-            overall and the most common five-stop route, with typical times, not one person's record. Source: ICE
-            detention data via the Deportation Data Project; CNS analysis. <b>Map: Mehedi Marof / CNS</b></span><span class="wordmark">Capital News Service</span></div>
-</figure>
-<script>window.STEPS=[{"text": "<b>Most people start in a hold room.</b> Usually in <b>Baltimore</b>, where 5,625 people arrested in Maryland were booked first, or <b>Salisbury</b>, where 1,836 were. Most of those who started in Salisbury, 1,616, were then moved to Baltimore.", "legend": "<span><i style=\"background:var(--ink)\"></i>Maryland facility</span>", "globe": false}, {"text": "<b>Then many are moved south.</b> More than half, 4,607 people, were held at some point in Louisiana, including 1,905 who passed through the Alexandria Staging Facility, the airport hub ICE uses for flights, including deportations. About nine in 10 spent the longest part of their detention outside Maryland.", "legend": "<span><i style=\"background:var(--red)\"></i>Facility outside Maryland</span>", "globe": false}, {"text": "<b>The most common recorded route had just two stops.</b> 360 people went from the Baltimore hold room straight to Richwood Correctional Center in Monroe, La. The typical person passed through three facilities.", "legend": "<span><i style=\"background:var(--blue)\"></i>Path</span>", "globe": false}, {"text": "<b>Some journeys were much longer.</b> 1,613 people, about one in five, were held in five or more different facilities. Here is the most common of those longer routes, followed by 25 people. It starts, like most, in the <b>Baltimore hold room</b>, typically for about a day.", "legend": "<span><i style=\"background:var(--blue)\"></i>The route, stop by stop</span>", "globe": false}, {"text": "<b>Stops 2 and 3: Virginia.</b> First the Caroline Detention Facility in Bowling Green, typically for about a day and a half, then ICE's Richmond hold room for a few hours before a long transfer.", "legend": "", "globe": false}, {"text": "<b>Stop 4: Winn Correctional Center, Winnfield, La.</b> More than 1,000 miles from Baltimore. The longest stop on this path, typically about three and a half days.", "legend": "", "globe": false}, {"text": "<b>Stop 5: the Alexandria Staging Facility.</b> ICE's hub at the Alexandria airport. The whole trip typically took about nine and a half days. ICE recorded all 25 as deported. 16 of them had no prior conviction or pending charge.", "legend": "", "globe": false}];</script>
+  <figure class="chart-frame" id="f-held">
+    <h3 class="chart-hed">Where people arrested in Maryland were held</h3>
+    <div class="controls" role="group" aria-label="Map views"><button type="button">Hold rooms</button><button
+        type="button">Moved south</button><button type="button">Most common route</button><button type="button">Longer
+        journeys</button><button type="button">Stops 2–3</button><button type="button">Stop 4</button><button
+        type="button">Stop 5</button></div>
+    <p class="step-text" id="step-text" aria-live="polite"></p>
+    <div class="card-legend" id="step-legend"></div>
+    <div class="viz" id="viz"></div>
+    <div class="chart-foot"><span class="chart-source">ICE facilities that held at least
+        one person arrested in Maryland since Jan. 20, 2025, sized by people held; the paths are the most common
+        overall and the most common five-stop route, with typical times, not one person's record. Source: ICE
+        detention data via the Deportation Data Project; CNS analysis. <b>Map: Mehedi Marof / CNS</b></span><span
+        class="wordmark">Capital News Service</span></div>
+  </figure>
+  <script>window.STEPS = [{ "text": "<b>Most people start in a hold room.</b> Usually in <b>Baltimore</b>, where 5,625 people arrested in Maryland were booked first, or <b>Salisbury</b>, where 1,836 were. Most of those who started in Salisbury, 1,616, were then moved to Baltimore.", "legend": "<span><i style=\"background:var(--ink)\"></i>Maryland facility</span>", "globe": false }, { "text": "<b>Then many are moved south.</b> More than half, 4,607 people, were held at some point in Louisiana, including 1,905 who passed through the Alexandria Staging Facility, the airport hub ICE uses for flights, including deportations. About nine in 10 spent the longest part of their detention outside Maryland.", "legend": "<span><i style=\"background:var(--red)\"></i>Facility outside Maryland</span>", "globe": false }, { "text": "<b>The most common recorded route had just two stops.</b> 360 people went from the Baltimore hold room straight to Richwood Correctional Center in Monroe, La. The typical person passed through three facilities.", "legend": "<span><i style=\"background:var(--blue)\"></i>Path</span>", "globe": false }, { "text": "<b>Some journeys were much longer.</b> 1,613 people, about one in five, were held in five or more different facilities. Here is the most common of those longer routes, followed by 25 people. It starts, like most, in the <b>Baltimore hold room</b>, typically for about a day.", "legend": "<span><i style=\"background:var(--blue)\"></i>The route, stop by stop</span>", "globe": false }, { "text": "<b>Stops 2 and 3: Virginia.</b> First the Caroline Detention Facility in Bowling Green, typically for about a day and a half, then ICE's Richmond hold room for a few hours before a long transfer.", "legend": "", "globe": false }, { "text": "<b>Stop 4: Winn Correctional Center, Winnfield, La.</b> More than 1,000 miles from Baltimore. The longest stop on this path, typically about three and a half days.", "legend": "", "globe": false }, { "text": "<b>Stop 5: the Alexandria Staging Facility.</b> ICE's hub at the Alexandria airport. The whole trip typically took about nine and a half days. ICE recorded all 25 as deported. 16 of them had no prior conviction or pending charge.", "legend": "", "globe": false }];</script>
 </body>
+
 </html>

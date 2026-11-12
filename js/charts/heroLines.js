@@ -14,8 +14,10 @@ export function drawHeroLines(svgEl, rows) {
   const y = d3.scaleLinear().domain([0, d3.max(data, d => d.non_custodial) * 1.08]).range([a.y1, a.y0]);
   svg.append('line').attr('x1', a.x0).attr('x2', a.x1).attr('y1', a.y1).attr('y2', a.y1).attr('stroke', '#444');
   const font = (w, s) => `${w} ${s}px Poppins, sans-serif`;
-  data.forEach(d => { if (d.month.endsWith('-01')) svg.append('text').attr('x', x(d.month)).attr('y', a.y1 + 18).attr('text-anchor', 'middle')
-    .attr('fill', '#888').style('font', font(500, 11)).text(d.month.slice(0, 4)); });
+  data.forEach(d => {
+    if (d.month.endsWith('-01')) svg.append('text').attr('x', x(d.month)).attr('y', a.y1 + 18).attr('text-anchor', 'middle')
+      .attr('fill', '#888').style('font', font(500, 11)).text(d.month.slice(0, 4));
+  });
   // Feb. 17, 2026: the 287(g) ban
   const xb = x('2026-02') + x.step() * 16 / 28;
   svg.append('line').attr('x1', xb).attr('x2', xb).attr('y1', a.y0 - 10).attr('y2', a.y1).attr('stroke', '#777').attr('stroke-dasharray', '3 3');

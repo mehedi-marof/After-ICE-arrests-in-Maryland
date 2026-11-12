@@ -5,20 +5,20 @@
 import { COLORS, fmt, pct, shortCounty, tooltip, row, DUR } from '../lib/util.js';
 
 export const MODES = {
-  all:       { key: 'arrests',   color: '#3a3a3a',     label: 'All arrests' },
-  norecord:  { key: 'no_record', color: COLORS.red,    label: 'No prior conviction or charge' },
+  all: { key: 'arrests', color: '#3a3a3a', label: 'All arrests' },
+  norecord: { key: 'no_record', color: COLORS.red, label: 'No prior conviction or charge' },
   community: { key: 'community', color: COLORS.orange, label: 'In the community' },
-  custody:   { key: 'custody',   color: COLORS.purple, label: 'From jails and prisons' },
-  office:    { key: 'office',    color: COLORS.rust,   label: "At ICE's offices" },
+  custody: { key: 'custody', color: COLORS.purple, label: 'From jails and prisons' },
+  office: { key: 'office', color: COLORS.rust, label: "At ICE's offices" },
 };
 const W = 900, H = 470, BINS = [10, 20, 40, 80];
 // light theme for the explorer, dark theme for the scrollytelling section
 const THEMES = {
   light: { ramp: ['#eef4f9', '#c6dbee', '#8fb9df', '#4d8fc7', '#1979b9'], base: '#f7f7f5', neighbor: '#f1f1ee', line: '#fff', shore: COLORS.ink, all: '#3a3a3a', ring: '#fff', key: '#888' },
-  dark:  { ramp: ['#1f2a33', '#1e4a6e', '#2268a3', '#3f8fd0', '#86c5f5'], base: '#262626', neighbor: '#1a1a1a', line: '#3d3d3d', shore: '#fbd603', all: '#d9d9d9', ring: '#111', key: '#aaa' },
+  dark: { ramp: ['#1f2a33', '#1e4a6e', '#2268a3', '#3f8fd0', '#86c5f5'], base: '#262626', neighbor: '#1a1a1a', line: '#3d3d3d', shore: '#fbd603', all: '#d9d9d9', ring: '#111', key: '#aaa' },
 };
 const LABELS = [['Baltimore', 10, -8, 'start'], ['Salisbury', 9, -7, 'start'], ['Ocean City', -6, 20, 'end'], ['Silver Spring', -10, 2, 'end'],
-                ['Hyattsville', 9, 12, 'start'], ['Easton', 8, -6, 'start'], ['Frederick', 8, -6, 'start']];
+['Hyattsville', 9, 12, 'start'], ['Easton', 8, -6, 'start'], ['Frederick', 8, -6, 'start']];
 
 export function createArrestMap(host, D, { choropleth = false, onSelect = null, theme = 'light' } = {}) {
   const T = THEMES[theme], RAMP = T.ramp, shade = v => { let k = 0; while (k < BINS.length && v >= BINS[k]) k++; return RAMP[k]; };
@@ -37,8 +37,10 @@ export function createArrestMap(host, D, { choropleth = false, onSelect = null, 
   const cg = svg.append('g').attr('class', 'county');
   const cpaths = cg.selectAll('path').data(counties).join('path').attr('d', path).attr('fill', T.base).style('stroke', T.line).attr('tabindex', onSelect ? 0 : null)
     .style('cursor', onSelect ? 'pointer' : null)
-    .on('mouseenter', (ev, f) => { const c = byFips[f.properties.fips], [cx, cy] = path.centroid(f);
-      tip.show(cx / W * host.clientWidth, cy / H * host.clientHeight, `<b>${shortCounty(c.county)}</b>${row('Arrests since Jan. 20, 2025', fmt(c.arrests))}${row('Per 10,000 residents', c.per_10k)}`); })
+    .on('mouseenter', (ev, f) => {
+      const c = byFips[f.properties.fips], [cx, cy] = path.centroid(f);
+      tip.show(cx / W * host.clientWidth, cy / H * host.clientHeight, `<b>${shortCounty(c.county)}</b>${row('Arrests since Jan. 20, 2025', fmt(c.arrests))}${row('Per 10,000 residents', c.per_10k)}`);
+    })
     .on('mouseleave', tip.hide)
     .on('click keydown', (ev, f) => { if (!onSelect || (ev.type === 'keydown' && ev.key !== 'Enter')) return; onSelect(f.properties.fips); });
   const shore = svg.append('g').attr('pointer-events', 'none');
@@ -51,8 +53,10 @@ export function createArrestMap(host, D, { choropleth = false, onSelect = null, 
   const labels = svg.append('g').attr('pointer-events', 'none');
   LABELS.forEach(([n, dx, dy, a]) => { const c = cities.find(c => c.name === n); if (c) labels.append('text').attr('class', 'label halo').attr('x', c.x + dx).attr('y', c.y + dy).attr('text-anchor', a).style('font-size', 13 * k + 'px').text(n); });
   const key = svg.append('g').attr('transform', `translate(24,${H - 76})`);
-  [100, 500, 1500].forEach(v => { key.append('circle').attr('cx', 32).attr('cy', 56 - r(v)).attr('r', r(v)).attr('fill', 'none').attr('stroke', T.key);
-    key.append('text').attr('x', 32).attr('y', 56 - 2 * r(v) - 4).attr('text-anchor', 'middle').style('font-size', 11 * k + 'px').text(fmt(v)); });
+  [100, 500, 1500].forEach(v => {
+    key.append('circle').attr('cx', 32).attr('cy', 56 - r(v)).attr('r', r(v)).attr('fill', 'none').attr('stroke', T.key);
+    key.append('text').attr('x', 32).attr('y', 56 - 2 * r(v) - 4).attr('text-anchor', 'middle').style('font-size', 11 * k + 'px').text(fmt(v));
+  });
   key.append('text').attr('x', 70).attr('y', 54).style('font-size', 11 * k + 'px').text('arrests');
 
   let mode = 'all', choro = choropleth, selected = null;

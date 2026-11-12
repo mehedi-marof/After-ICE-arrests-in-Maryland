@@ -13,10 +13,12 @@ const STEPS = [
   { stop: 1, zoom: [1, 3] }, { stop: 3, zoom: [1, 3], label: 'Two stops in Virginia' }, { stop: 4, zoom: [1, 5] }, { stop: 5, zoom: [1, 5] },
 ];
 const LABELS = [['BALTIMORE HOLD ROOM', 'Baltimore', 12, 4, 'start'], ['SALISBURY HOLD ROOM', 'Salisbury', 10, 12, 'start'], ['FARMVILLE DETENTION CENTER', 'Farmville, Va.', -10, 4, 'end'],
-  ['MOSHANNON VALLEY PROCESSING CENTER', 'Philipsburg, Pa.', -10, 0, 'end'], ['ALEXANDRIA STAGING FACILITY', 'Alexandria, La.', -12, 4, 'end'],
-  ['PORT ISABEL SPC', 'Los Fresnos, Texas', -12, 4, 'end'], ['AZ REM OP COORD CENTER (AROCC)', 'Mesa, Ariz.', 10, 4, 'start']];
-const STOP_NAMES = { 'BALTIMORE HOLD ROOM': 'Baltimore hold room', 'CAROLINE DETENTION FACILITY': 'Caroline Detention Facility',
-  'RICHMOND SUB-OFFICE HOLD': 'Richmond hold room', 'WINN CORRECTIONAL CENTER': 'Winn Correctional Center', 'ALEXANDRIA STAGING FACILITY': 'Alexandria Staging Facility' };
+['MOSHANNON VALLEY PROCESSING CENTER', 'Philipsburg, Pa.', -10, 0, 'end'], ['ALEXANDRIA STAGING FACILITY', 'Alexandria, La.', -12, 4, 'end'],
+['PORT ISABEL SPC', 'Los Fresnos, Texas', -12, 4, 'end'], ['AZ REM OP COORD CENTER (AROCC)', 'Mesa, Ariz.', 10, 4, 'start']];
+const STOP_NAMES = {
+  'BALTIMORE HOLD ROOM': 'Baltimore hold room', 'CAROLINE DETENTION FACILITY': 'Caroline Detention Facility',
+  'RICHMOND SUB-OFFICE HOLD': 'Richmond hold room', 'WINN CORRECTIONAL CENTER': 'Winn Correctional Center', 'ALEXANDRIA STAGING FACILITY': 'Alexandria Staging Facility'
+};
 const ROUTE_COLOR = '#1979b9';   // CNS blue, distinct from the red facility circles
 // the single most common path overall ends here (360 people; see the notebook, section 4.2)
 const SHORT_FACILITY = 'RICHWOOD COR CENTER', SHORT_LABEL = 'Richwood Correctional Center, La.';

@@ -20,7 +20,9 @@ export function drawDetainers(host, rows) {
     .attr('fill', 'none').attr('stroke', c).attr('stroke-width', 2.2));
   marker(svg, x('2026-02') + x.step() * 16 / 28, 2, h - m.b, 'Ban, Feb. 17', null, 'left');
   svg.append('rect').attr('x', m.l).attr('y', m.t).attr('width', W - m.l - m.r).attr('height', h - m.t - m.b).attr('fill', 'transparent')
-    .on('mousemove', ev => { const [px] = d3.pointer(ev); const i = Math.max(0, Math.min(data.length - 1, Math.round((px - m.l) / x.step()))); const d = data[i];
-      tip.show(x(d.month) / W * host.clientWidth, y(LINES[0][2](d)) / h * host.clientHeight, `<b>${monthLabel(d.month)}</b>${LINES.map(([name, , f]) => row(name, fmt(f(d)))).join('')}`); })
+    .on('mousemove', ev => {
+      const [px] = d3.pointer(ev); const i = Math.max(0, Math.min(data.length - 1, Math.round((px - m.l) / x.step()))); const d = data[i];
+      tip.show(x(d.month) / W * host.clientWidth, y(LINES[0][2](d)) / h * host.clientHeight, `<b>${monthLabel(d.month)}</b>${LINES.map(([name, , f]) => row(name, fmt(f(d)))).join('')}`);
+    })
     .on('mouseleave', tip.hide);
 }

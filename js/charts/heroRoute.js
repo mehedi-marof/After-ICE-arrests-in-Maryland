@@ -23,8 +23,10 @@ export function drawHeroRoute(svgEl, D) {
     .attr('r', d => Math.max(1.6, r(d.people)));
   // the most common five-stop route, stop to stop
   const stops = D.route.slice().sort((a, b) => a.stop - b.stop).map(d => proj([d.lon, d.lat])).filter(Boolean);
-  const arc = (a, b) => { const mx = (a[0] + b[0]) / 2, my = (a[1] + b[1]) / 2, dx = b[0] - a[0], dy = b[1] - a[1];
-    return `M${a[0]},${a[1]} Q${mx - dy * .25},${my + dx * .25} ${b[0]},${b[1]}`; };
+  const arc = (a, b) => {
+    const mx = (a[0] + b[0]) / 2, my = (a[1] + b[1]) / 2, dx = b[0] - a[0], dy = b[1] - a[1];
+    return `M${a[0]},${a[1]} Q${mx - dy * .25},${my + dx * .25} ${b[0]},${b[1]}`;
+  };
   // the route draws itself stop by stop after the facilities appear
   const legs = svg.append('g').selectAll('path').data(d3.pairs(stops)).join('path').attr('d', ([a, b]) => arc(a, b))
     .attr('fill', 'none').attr('stroke', '#ff5a4e').attr('stroke-width', 2).attr('stroke-linecap', 'round');

@@ -22,8 +22,10 @@ export function drawCustody(host, rows) {
   const pk = data.reduce((a, b) => (b.non_custodial > a.non_custodial ? b : a));
   if (!narrow) svg.append('text').attr('class', 'label halo').attr('x', x(pk.month) - 8).attr('y', y(pk.non_custodial) + 4).attr('text-anchor', 'end').text(`${fmt(pk.non_custodial)}, ${monthLabel(pk.month)}`);
   svg.append('rect').attr('x', m.l).attr('y', m.t).attr('width', W - m.l - m.r).attr('height', h - m.t - m.b).attr('fill', 'transparent')
-    .on('mousemove', ev => { const [px] = d3.pointer(ev); const i = Math.max(0, Math.min(data.length - 1, Math.round((px - m.l) / x.step()))); const d = data[i];
+    .on('mousemove', ev => {
+      const [px] = d3.pointer(ev); const i = Math.max(0, Math.min(data.length - 1, Math.round((px - m.l) / x.step()))); const d = data[i];
       tip.show(x(d.month) / W * host.clientWidth, y(d.non_custodial) / h * host.clientHeight,
-        `<b>${monthLabel(d.month)}</b>${row('Non-custodial', fmt(d.non_custodial))}${row('Custodial', fmt(d.custodial))}`); })
+        `<b>${monthLabel(d.month)}</b>${row('Non-custodial', fmt(d.non_custodial))}${row('Custodial', fmt(d.custodial))}`);
+    })
     .on('mouseleave', tip.hide);
 }
